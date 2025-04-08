@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juwon Brunson - Cybersecurity Professional</title>
+    <meta name="description" content="Juwon Brunson's cybersecurity portfolio website showcasing skills, experience in cybersecurity, C-130J maintenance, threat mitigation, relevant certifications, and participation in CTF competitions.">
+    <meta name="keywords" content="cybersecurity, security professional, C-130J maintenance, aircraft debrief, threat mitigation, Splunk, Wireshark, Kali Linux, Python, SQL, Google Cybersecurity Professional, Security+, CTF, resume, Juwon Brunson">
+    <meta name="author" content="Juwon Brunson">
+    <meta property="og:title" content="Juwon Brunson - Cybersecurity Professional">
+    <meta property="og:description" content="SECRET Clearance Eligible | Cybersecurity Professional | C-130J Maintenance & Debrief Expert">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_WEBSITE_URL"> <meta property="og:image" content="URL_TO_YOUR_PROFILE_IMAGE"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Juwon Brunson - Cybersecurity Professional">
+    <meta name="twitter:description" content="SECRET Clearance Eligible | Cybersecurity Professional | C-130J Maintenance & Debrief Expert">
+    <meta name="twitter:image" content="URL_TO_YOUR_PROFILE_IMAGE"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@300&display=swap" crossorigin="anonymous">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Mobile-first approach - base styles for small screens */
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #1a1a1a;
+            --accent: #00f7ff;
+            --success: #00ff80;
+            --warning: #ff9900;
+            --danger: #ff4545;
+            --text-primary: #e0e0e0;
+            --text-secondary: #8e8e8e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto Mono', monospace;
+            background: var(--primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5rem;
+            background: var(--secondary);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.75rem;
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            padding: 0 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        main {
+            padding-top: 80px; /* Adjust based on navbar height */
+        }
+
+        .hero {
+            height: calc(100vh - 80px);
+            background: linear-gradient(135deg, var(--secondary) 0%, #0a0a1a 100%),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%231a1a1a" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,192H480L768,128L1056,64L1344,0L1440,32L1440,320L1344,320C1248,320,1152,320,1056,320C960,320,864,320,768,320C672,320,576,320,480,320C384,320,288,320,192,320C96,320,48,320,24,320L0,320Z"></path></svg>');
+            background-blend-mode: overlay;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--success) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            padding: 1.5rem 4rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 255, 255, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.3); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 4px 20px rgba(0, 255, 255, 0.3); }
+            to { text-shadow: 0 4px 30px rgba(0, 255, 255, 0.6); }
+        }
+
+        .section {
+            padding: 8rem 5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .info-list li {
+            margin: 1rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-card {
+            background: var(--secondary);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .skill-card h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-section {
+            background: var(--secondary);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        .resume-item {
+            margin: 2rem 0;
+        }
+
+        .resume-item h4 {
+            margin-top: 0;
+            color: var(--success);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-item .timeline {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resume-item ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .resume-item ul li::before {
+            content: '⟩';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .certification-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .awards-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .competition-achievements li {
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-roles li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin: 2rem 0;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--secondary);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            color: var(--success);
+            text-align: center;
+        }
+
+        .footer {
+            padding: 4rem;
+            text-align: center;
+            background: var(--primary);
+        }
+
+        .footer a {
+            color: var(--accent);
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer a:hover {
+            color: var(--success);
+            transform: scale(1.1);
+        }
+
+        .footer p {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* macOS Terminal Styles */
+        #terminal {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 700px;
+            max-height: 600px;
+            background: var(--secondary);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+            display: none;
+            flex-direction: column;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            z-index: 2000;
+            overflow: hidden;
+        }
+
+        #terminal-output {
+            flex-grow: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            color: var(--text-primary);
+            line-height: 1.75;
+            white-space: normal; /* Allow text to wrap normally */
+            word-break: break-word; /* Break long words if necessary */
+        }
+
+        .traffic-lights {
+            display: flex;
+            gap: 12px;
+            margin-right: 1rem;
+        }
+
+        .traffic-light {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fc625d;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.3),
+                0 0 0 1px #7e0000;
+            transition: transform 0.3s ease;
+        }
+
+        .traffic-light:nth-child(2) {
+            background: #fdbc40;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.3),
+                0 0 0 1px #8a4000;
+        }
+
+        .traffic-light:nth-child(3) {
+            background: #34c749;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.3),
+                0 0 0 1px #00640d;
+        }
+
+        .traffic-light:hover {
+            transform: scale(1.1);
+        }
+
+        #terminal-title {
+            color: var(--text-primary);
+            font-size: 1rem;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .terminal-close-button {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .terminal-close-button:hover {
+            opacity: 1;
+        }
+
+        #terminal-output div[style*="grid-template-columns"] {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            background-color: var(--secondary);
+            border-left: 3px solid var(--accent);
+        }
+
+        #terminal-output div[style*="grid-template-columns"] span:nth-child(1) {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--success);
+        }
+
+        #terminal-input-area {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-prompt {
+            color: var(--success);
+            margin-right: 0.5rem;
+        }
+
+        #terminal-input {
+            background: none;
+            border: none;
+            color: var(--accent);
+            outline: none;
+            font-family: inherit;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        #terminal-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        #terminal-toggle {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--secondary);
+            color: var(--accent);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            z-index: 2001;
+            font-family: 'SF Mono', monospace;
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #terminal-toggle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Scrollbar styles for WebKit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 1.5rem 3rem;
+            }
+
+            main {
+                padding-top: 60px;
+            }
+
+            .hero {
+                height: calc(100vh - 60px);
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .section {
+                padding: 6rem 3rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                text-align: center;
+            }
+
+            #terminal {
+                width: 90%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .hero {
+                height: 80vh;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            #terminal {
+                width: 95%;
+                max-height: 80%;
+                bottom: 20px;
+                right: 10px;
+            }
+
+            #terminal-toggle {
+                bottom: 20px;
+                right: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+        }
+        /* Consider minifying your CSS for production */
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Juwon Brunson</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#awards">Awards</a>
+                <a href="#competitions">Competitions</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Juwon Marquis Brunson</h1>
+                <p>SECRET Clearance Eligible | Cybersecurity Professional | C-130J Maintenance & Debrief Expert</p>
+                <button class="cta-button" onclick="downloadResume()">Download Full Resume</button>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="grid-container">
+                    <div class="profile-image">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 200 200'><rect width='200' height='200' rx='20' fill='%231a1a1a'/><path d='M100 60a40 40 0 1 1 0 80 40 40 0 0 1 0-80zm0 60a20 20 0 1 0 0-40 20 20 0 0 0 0 40z' fill='%2300f7ff'/></svg>"
+                             alt="Stylized profile image of a head" style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);">
+                    </div>
+                    <div class="about-text">
+                        <p>Dynamic cybersecurity professional with SECRET clearance eligibility and 2+ years of experience in securing classified databases and critical infrastructure. Combining military aircraft maintenance expertise with advanced cybersecurity training to deliver unique threat mitigation perspectives.</p>
+                        <ul class="info-list">
+                            <li>🎓 B.S. in Cyber Operations/Warfare - Old Dominion University (Expected 2027)</li>
+                            <li>🔒 Google Cybersecurity Professional Certified (2023)</li>
+                            <li>🛡️ Security Clearance: SECRET (Expired - Eligible for Renewal)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="skills">
+            <div class="container">
+                <h2>Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Tools & Platforms</h3>
+                        <p>Splunk, Wireshark, Metasploit, Kali Linux, Nmap, Burp Suite, ATOMS project implementation</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Frameworks & Standards</h3>
+                        <p>NIST SP 800-53, MITRE ATT&CK, OPSEC, OSINT, DLP, NIST ARC GIS</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Languages</h3>
+                        <p>Python, SQL, Bash</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="experience">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                <div class="resume-section">
+                    <article class="resume-item">
+                        <h4>Aircraft Debrief Technician (E-4) - US Air Force</h4>
+                        <p class="timeline">Feb 2022 – Nov 2023 | Little Rock AFB, AR</p>
+                        <ul>
+                            <li>Secured 100+ classified databases using PKI, S/MIME, and AES-256 encryption with 0 breaches over 22 months</li>
+                            <li>Implemented ATOMS project on C-130J-30 platforms enabling real-time combat intelligence capabilities</li>
+                            <li>Protected nuclear/radiological assets through advanced physical and cyber intrusion prevention</li>
+                        </ul>
+                    </article>
+                    <article class="resume-item">
+                        <h4>C-130 Dedicated Crew Chief (E-3/E-4) - US Air Force</h4>
+                        <p class="timeline">Oct 2021 – Mar 2022 | Little Rock AFB, AR</p>
+                        <ul>
+                            <li>Patched 95% of avionics vulnerabilities enhancing system reliability and survivability</li>
+                            <li>Trained 100+ personnel on OPSEC protocols reducing human-error incidents by 40%</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="awards">
+            <div class="container">
+                <h2>Awards & Certifications</h2>
+                <div class="resume-section">
+                    <article class="resume-item">
+                        <h4>Certifications</h4>
+                        <ul class="certification-list">
+                            <li>Google Cybersecurity Professional (2023)</li>
+                            <li>CompTIA Security+ (Expected 2026)</li>
+                        </ul>
+                    </article>
+                    <article class="resume-item">
+                        <h4>Awards & Honors</h4>
+                        <ul class="awards-list">
+                            <li>VA Landmark Scholarship Recipient (2024-2025)</li>
+                            <li>Air and Space Outstanding Unit Award (2x)</li>
+                            <li>Global War on Terrorism Medal</li>
+                            <li>National Defense Service Medal</li>
+                            <li>Dean's List (2018-2019)</li>
+                            <li>Warrior Scholar Program Graduate (2023)</li>
+                            <li>Posse Program Finalist, Phi Eta (2023)</li>
+                            <li>Phi Eta Sigma Honor Society Member (Lifetime)</li>
+                            <li>National Society of Leadership and Success Member (Lifetime)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="competitions">
+            <div class="container">
+                <h2>Cybersecurity Competitions</h2>
+                <div class="resume-section">
+                    <article class="resume-item">
+                        <h4>Key Achievements</h4>
+                        <ul class="competition-achievements">
+                            <li>Cyber Forge 2024 CTF - 5th Place (Virginia/ODU)</li>
+                            <li>NSA/CSS Codebreaker Challenge 2024 Participant</li>
+                            <li>COVA CCI & ODU First AI Security Competition</li>
+                        </ul>
+                    </article>
+                    <article class="resume-item">
+                        <h4>Leadership</h4>
+                        <ul class="leadership-roles">
+                            <li>Chief of Staff, Student Veterans of America (2024-2025)</li>
+                            <li>Student Government Association Officer (2024-2025)</li>
+                            <li>Advocated for veterans' issues in Washington DC with SVA leadership</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xyyabwzw" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Secure Message</button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div>
+            <a href="https://linkedin.com/in/juwonbrunson" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-linkedin" style="font-size:24px; color: var(--accent);"></i>
+            </a>
+            <a href="https://github.com/LinuxRonin" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-github" style="font-size:24px; color: var(--accent); margin-left: 1rem;"></i>
+            </a>
+        </div>
+        <p>© 2025 Juwon Brunson. All rights reserved.</p>
+    </footer>
+
+    <div id="terminal-toggle" onclick="toggleTerminal()">Interactive Resume CLI</div>
+    <div id="terminal">
+        <div id="terminal-header">
+            <div class="traffic-lights">
+                <div class="traffic-light"></div>
+                <div class="traffic-light"></div>
+                <div class="traffic-light"></div>
+            </div>
+            <div id="terminal-title">bash — Juwon Brunson</div>
+            <button onclick="toggleTerminal()" class="terminal-close-button">×</button>
+        </div>
+        <div id="terminal-output"></div>
+        <div id="terminal-input-area">
+            <span class="terminal-prompt">➜</span>
+            <input type="text" id="terminal-input" onkeydown="handleTerminalInput(event)" placeholder="Enter 'help' for available commands">
+        </div>
+    </div>
+
+    <script defer>
+        // JavaScript improvements: modern syntax, command history
+        let terminalVisible = false;
+        const terminalOutput = document.getElementById('terminal-output');
+        const terminalInputArea = document.getElementById('terminal-input-area');
+        const terminalInput = document.getElementById('terminal-input');
+        const terminal = document.getElementById('terminal');
+        const terminalHeader = document.getElementById('terminal-header');
+        const navLinks = document.querySelector('.nav-links');
+        const logo = document.querySelector('.logo');
+        const trafficLights = document.querySelector('.traffic-lights');
+        let commandHistory = [];
+        let historyIndex = -1;
+
+        function toggleTerminal() {
+            terminalVisible = !terminalVisible;
+            terminal.style.display = terminalVisible ? 'flex' : 'none';
+            if (terminalVisible) {
+                terminalInput.focus();
+            }
+        }
+
+        function printToTerminal(message, className = '') {
+            const div = document.createElement('div');
+            div.className = className;
+            div.innerHTML = message;
+            terminalOutput.appendChild(div);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        function handleTerminalInput(e) {
+            if (e.key === 'Enter') {
+                const input = e.target.value.trim().toLowerCase();
+                if (input) {
+                    commandHistory.push(input);
+                    historyIndex = commandHistory.length; // Reset history index for new commands
+                }
+                printToTerminal(`<span style="color: var(--success);">➜</span> ${input}`);
+                processCommand(input);
+                e.target.value = '';
+            } else if (e.key === 'ArrowUp') {
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    terminalInput.value = commandHistory[historyIndex];
+                }
+            } else if (e.key === 'ArrowDown') {
+                if (historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    terminalInput.value = commandHistory[historyIndex];
+                } else if (historyIndex === commandHistory.length - 1) {
+                    historyIndex++;
+                    terminalInput.value = '';
+                }
+            }
+        }
+
+        function processCommand(input) {
+            switch (input) {
+                case 'help':
+                    printToTerminal(`
+                        <div style="color: var(--text-secondary); display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem;">
+                            <span style="color: var(--accent); font-weight: bold;">&gt; help</span> <span>Show this message</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; resume</span> <span>Download PDF resume</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; linkedin</span> <span>Open LinkedIn profile</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; github</span> <span>Open GitHub profile</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; about</span> <span>Scroll to About section</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; skills</span> <span>Scroll to Skills section</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; experience</span> <span>Scroll to Experience section</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; awards</span> <span>Scroll to Awards section</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; competitions</span> <span>Scroll to Competitions section</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; contact</span> <span>Scroll to Contact section</span>
+                            <span style="color: var(--accent); font-weight: bold;">&gt; clear</span> <span>Clear terminal</span>
+                            </div>
+                    `);
+                    break;
+                case 'resume':
+                    window.open('Juwon Brunson Resume.pdf', '_blank');
+                    break;
+                case 'linkedin':
+                    window.open('https://linkedin.com/in/juwonbrunson', '_blank');
+                    break;
+                case 'github':
+                    window.open('https://github.com/LinuxRonin', '_blank');
+                    break;
+                case 'about':
+                case 'skills':
+                case 'experience':
+                case 'awards':
+                case 'competitions':
+                case 'contact':
+                    const section = document.getElementById(input);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                        printToTerminal(`<div style="color: var(--text-secondary)">Scrolling to ${input} section...</div>`);
+                    } else {
+                        printToTerminal(`<div style="color: var(--danger)">zsh: no such section: ${input}</div>`);
+                    }
+                    break;
+                case 'clear':
+                    terminalOutput.innerHTML = '';
+                    break;
+                default:
+                    printToTerminal(`<div style="color: var(--danger)">zsh: command not found: ${input}</div>`);
+            }
+            // Placeholder for tab completion functionality
+            // Placeholder for potentially fetching and displaying short content snippets in the terminal
+        }
+
+        // Make the terminal draggable
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        terminalHeader.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - terminal.getBoundingClientRect().left;
+            offsetY = e.clientY - terminal.getBoundingClientRect().top;
+            terminal.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            terminal.style.left = `${e.clientX - offsetX}px`;
+            terminal.style.top = `${e.clientY - offsetY}px`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            terminal.style.cursor = 'grab';
+        });
+
+        // Basic form submission handling (can be enhanced)
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        formMessage.textContent = 'Message sent successfully!';
+                        formMessage.className = 'form-message success';
+                        contactForm.reset();
+                        setTimeout(() => {
+                            formMessage.textContent = '';
+                            formMessage.className = 'form-message';
+                        }, 3000);
+                    } else {
+                        formMessage.textContent = 'Failed to send message. Please try again.';
+                        formMessage.className = 'form-message error';
+                    }
+                } catch (error) {
+                    console.error('Error sending form:', error);
+                    formMessage.textContent = 'An unexpected error occurred. Please try again later.';
+                    formMessage.className = 'form-message error';
+                }
+            });
+        }
+
+        function downloadResume() {
+            window.open('Juwon Brunson Resume.pdf', '_blank');
+        }
+
+        // Toggle mobile navigation
+        logo.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        const navLinkElements = document.querySelectorAll('.nav-links a');
+        navLinkElements.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+
+        // Hide navigation on scroll down, show on scroll up (optional enhancement)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                document.querySelector('header').style.transform = 'translateY(-100%)';
+            } else if (scrollTop < lastScrollTop || scrollTop <= 100) {
+                document.querySelector('header').style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+        // Remember to configure your server with HTTPS and security headers (CSP, HSTS, etc.)
+        // Keep your website code and dependencies updated regularly.
+        // Test your website thoroughly on different browsers and devices.
+    </script>
+</body>
+</html>
