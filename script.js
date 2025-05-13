@@ -73,7 +73,7 @@ function processCommand(input) {
             `);
             break;
         case 'resume':
-            window.open('Juwon Brunson Resume.pdf', '_blank');
+            window.open('Juwon_Brunson_Cyber_4Yrs_Exp_Resume.pdf', '_blank');
             break;
         case 'linkedin':
             window.open('https://linkedin.com/in/juwonbrunson', '_blank');
