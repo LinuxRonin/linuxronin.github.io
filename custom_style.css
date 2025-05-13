@@ -344,8 +344,13 @@ main {
 .traffic-lights {
     display: flex;
     gap: 12px;
-    margin-right: 1rem;
+    margin-right: auto;
+    padding-left: 0.25rem;
+    align-items: center;
+    height: 100%;
+    flex-shrink: 0;
 }
+
 
 .traffic-light {
     width: 14px;
