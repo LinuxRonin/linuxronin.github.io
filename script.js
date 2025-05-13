@@ -180,5 +180,15 @@ navLinkElements.forEach(link => {
 
 // Hide navigation on scroll down, show on scroll up
 let lastScrollTop = 0;
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement
+window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        document.querySelector('header').style.top = '-100px';
+    } else {
+        // Scrolling up
+        document.querySelector('header').style.top = '0';
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+});
