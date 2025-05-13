@@ -161,7 +161,7 @@ if (contactForm) {
 }
 
 function downloadResume() {
-    window.open('Juwon_Brunson_Cyber_4Yrs_Exp_Resume', '_blank');
+    window.open('Juwon_Brunson_Cyber_4Yrs_Exp_Resume.pdf', '_blank');
 }
 
 // Toggle mobile navigation
